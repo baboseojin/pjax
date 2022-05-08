@@ -1,11 +1,11 @@
-let domain;
-let exception = [];
+if(typeof domain ==='undefined') console.error('domain is undefined');
+if(typeof exception ==='undefined') let exception = [];
 
-let mainBodyName;
+if(typeof mainBodyName ==='undefined') console.error('mainBodyName is undefined');
 
-let beforeLoad = function(url){}; 
-let afterLoad = function(){};
-let afterSuccess = function(){};
+if(typeof beforeLoad ==='undefined') let beforeLoad = function(url){}; 
+if(typeof afterLoad ==='undefined') let afterLoad = function(){};
+if(typeof afterSuccess ==='undefined') let afterSuccess = function(){};
 
 function readyToOnClick(){
     Object.values(document.getElementsByTagName('amazing-click')).forEach(function(item){
