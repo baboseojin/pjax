@@ -77,7 +77,7 @@ function load(url){
   let loadUrl = new URL(url);
   let loadStatus;
   if (loadUrl.origin === domain && exception.indexOf(loadUrl.pathname) === -1){
-        fetch(url, {headers: redirect: 'follow'})
+        fetch(url, {redirect: 'follow'})
         .then(function(response){
             if(!response.ok){
             loadStatus = 'failed';
