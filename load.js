@@ -76,6 +76,7 @@ function load(url){
   beforeLoad(url);
   let loadUrl = new URL(url);
   let loadStatus;
+  console.log(loadUrl.origin, domain);
   if (loadUrl.origin === domain && exception.indexOf(loadUrl.pathname) === -1){
         fetch(url, {redirect: 'follow'})
         .then(function(response){
