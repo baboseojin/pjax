@@ -2,9 +2,11 @@
  font-family: 'NanumSquare';
  font-weight: 400;
  src: url(NanumSquare_acR.ttf);
+ font-display: swap;
 }
 @font-face {
  font-family: 'NanumSquare';
  font-weight: 700;
  src: url(NanumSquare_acB.ttf);
+ font-display: swap;
 }
