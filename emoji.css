@@ -11,9 +11,9 @@
  font-display: swap;
 }
 @font-face {
-  font-family: "Tossface";
+  font-family: "joypixels";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("TossFaceFontMac.ttf") format("truetype");
+  src: url("joypixels-android.ttf") format("truetype");
 }
