@@ -94,7 +94,7 @@ function load(url){
         .then(function(returnValue){
             afterLoad();
             if(loadStatus === 'succeed'){
-                history.pushState({pathname:new URL(url).pathname}, '', url);
+                history.pushState({pathname:new URL(url).pathname}, '', new URL(url).pathname + new URL(url).search);
                 changeHTML(url, returnValue);
                 afterSuccess();
             }else if(loadStatus === 'redirected'){
