@@ -73,7 +73,7 @@ function changeHTML (url, htmlText){
 }
     
 function load(url){
-  new CustomEvent('movePage');
+  document.dispatchEvent(new CustomEvent("movePage"));
   beforeLoad(url);
   let loadUrl = new URL(url);
   let loadStatus;
@@ -114,7 +114,7 @@ function load(url){
 }
 
 window.onpopstate = function(event){
-    new CustomEvent('movePage');
+    document.dispatchEvent(new CustomEvent("movePage"));
     event.preventDefault();
     event.stopImmediatePropagation();
     load(domain+event.state.pathname.replaceAll('///', '/'));
