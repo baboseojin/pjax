@@ -104,7 +104,7 @@ function load(url){
             }
         });
   }else{
-    if(domain.indexOf(loadUrl.origin) != -1){
+    if(domain.indexOf(loadUrl.origin) == -1){
         window.open(url);
     }else{
         location.href = url;
