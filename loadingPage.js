@@ -77,8 +77,7 @@ function load(url){
   beforeLoad(url);
   let loadUrl = new URL(url);
   let loadStatus;
-  console.log(loadUrl.origin, domain);
-  if (loadUrl.origin === domain && exception.indexOf(loadUrl.pathname) === -1){
+  if (domain.indexOf(loadUrl.origin) != -1 && exception.indexOf(loadUrl.pathname) === -1){
         fetch(url, {redirect: 'follow'})
         .then(function(response){
             if(!response.ok){
@@ -105,7 +104,7 @@ function load(url){
             }
         });
   }else{
-    if(loadUrl.origin != domain){
+    if(domain.indexOf(loadUrl.origin) != -1){
         window.open(url);
     }else{
         location.href = url;
@@ -117,7 +116,7 @@ window.onpopstate = function(event){
     document.dispatchEvent(new CustomEvent("movePage"));
     event.preventDefault();
     event.stopImmediatePropagation();
-    load(domain+event.state.pathname.replaceAll('///', '/'));
+    load(domain[1]+event.state.pathname.replaceAll('///', '/'));
 };
 
 readyToOnClick();
